@@ -1,6 +1,6 @@
 package com.wellscosta;
 
-import com.wellscosta.dao.ClienteDaoMock;
+import com.wellscosta.dao.ClienteDAO;
 import com.wellscosta.dao.IClienteDAO;
 import com.wellscosta.domain.Cliente;
 import org.junit.Assert;
@@ -12,7 +12,7 @@ public class ClienteDAOTest {
     Cliente cliente;
 
     public ClienteDAOTest() {
-        clienteDao = new ClienteDaoMock();
+        clienteDao = new ClienteDAO();
     }
 
     @Before
@@ -25,7 +25,7 @@ public class ClienteDAOTest {
         cliente.setCidade("Feira de Santana");
         cliente.setEnd("Endereco");
         cliente.setTel(99999999999L);
-        clienteDao.salvar(cliente);
+
     }
 
     @Test
@@ -36,17 +36,17 @@ public class ClienteDAOTest {
 
     @Test
     public void pesquisarCliente() {
+        salvarCliente();
         Cliente clienteConsultado = clienteDao.buscarPorCpf(cliente.getCpf());
         Assert.assertNotNull(clienteConsultado);
     }
 
     @Test
     public void alterarCliente() {
+        salvarCliente();
         cliente.setNome("Wellington Santos");
-        clienteDao.alterar(cliente);
-        //Cliente clienteConsultado = clienteService.buscarPorCpf(cliente.getCpf());
-        //Assert.assertEquals("Wellington Santos", clienteConsultado.getNome());
-        Assert.assertEquals("Wellington Santos", cliente.getNome());
+        Cliente clienteAlterado = clienteDao.alterar(cliente);
+        Assert.assertEquals("Wellington Santos", clienteAlterado.getNome());
     }
 
     @Test
