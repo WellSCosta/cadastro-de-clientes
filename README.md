@@ -34,8 +34,20 @@ Um dos desafios iniciais do curso de formação **Especialista Back-end Java da 
      <img width="300" heigth="300" src="https://github.com/user-attachments/assets/a081deb1-2f0a-49e2-b3dd-17700d3018ee">
 </p>
 
-## Contribuição
-Contribuições são bem-vindas! Sinta-se à vontade para abrir um issue ou enviar um pull request.
+## Contribuindo
+
+Contribuições são bem-vindas! Para contribuir com o projeto, por favor siga estes passos:
+
+1. Faça um fork do repositório.
+2. Crie uma branch para sua feature ou correção (`git checkout -b feature/nova-feature`).
+3. Faça commit das suas mudanças (`git commit -am 'Adiciona nova feature'`).
+4. Envie suas alterações para o repositório (`git push origin feature/nova-feature`).
+5. Abra um pull request.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
 
 ## Contato
 E-mail: wellscostaofc@gmail.com.
